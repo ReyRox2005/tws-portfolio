@@ -1,0 +1,77 @@
+/* style.css */
+/* Production starter stylesheet for Reyansh Chandak Portfolio */
+
+:root{
+--bg:#070b14;
+--surface:rgba(255,255,255,.06);
+--surface2:rgba(255,255,255,.09);
+--text:#f5f7fb;
+--muted:#a6b0c3;
+--accent:#6ea8ff;
+--border:rgba(255,255,255,.12);
+--radius:22px;
+--shadow:0 20px 60px rgba(0,0,0,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:Inter,sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+line-height:1.6;
+}
+::selection{background:var(--accent);color:#000}
+.background{position:fixed;inset:0;z-index:-2;overflow:hidden}
+.gradient{position:absolute;border-radius:50%;filter:blur(120px);opacity:.45;animation:float 14s ease-in-out infinite}
+.gradient-1{width:420px;height:420px;background:#315cff;top:-100px;left:-120px}
+.gradient-2{width:360px;height:360px;background:#7b61ff;right:-80px;top:20%}
+.gradient-3{width:300px;height:300px;background:#00bcd4;bottom:-100px;left:35%}
+.grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px}
+@keyframes float{50%{transform:translateY(-35px) translateX(20px) scale(1.08)}}
+#cursor-glow{position:fixed;width:240px;height:240px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(110,168,255,.22),transparent 70%);transform:translate(-50%,-50%);z-index:999}
+header{position:fixed;top:0;width:100%;z-index:100}
+.navbar{max-width:1200px;margin:auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,12,20,.45);backdrop-filter:blur(18px);border:1px solid var(--border);border-radius:18px;margin-top:16px}
+.logo{text-decoration:none;color:#fff;font-weight:800}
+.nav-links{display:flex;list-style:none;gap:26px}
+.nav-links a{text-decoration:none;color:var(--muted)}
+.nav-links a:hover{color:#fff}
+.menu-btn{display:none}
+.section{max-width:1200px;margin:auto;padding:110px 24px}
+#hero{max-width:1200px;margin:auto;padding:180px 24px 100px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.badge,.glass-card,.btn{backdrop-filter:blur(20px)}
+.badge{display:inline-block;padding:8px 16px;background:var(--surface);border:1px solid var(--border);border-radius:999px}
+h1{font-size:clamp(3rem,8vw,5.8rem);line-height:1}
+h1 span{display:block;background:linear-gradient(90deg,#fff,#8cb6ff);-webkit-background-clip:text;color:transparent}
+h2{margin:20px 0;color:#dbe6ff}
+p{color:var(--muted)}
+.hero-buttons{display:flex;gap:16px;margin:28px 0}
+.btn{display:inline-flex;padding:14px 24px;border-radius:999px;text-decoration:none;border:1px solid var(--border);transition:.3s}
+.primary{background:linear-gradient(135deg,#4f7cff,#7b61ff);color:#fff}
+.secondary{color:#fff;background:var(--surface)}
+.btn:hover{transform:translateY(-3px)}
+.hero-stats{display:flex;gap:18px;margin-top:24px}
+.stat{padding:18px;background:var(--surface);border:1px solid var(--border);border-radius:18px}
+.glass-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+.profile-card{min-height:300px}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title span{color:var(--accent);text-transform:uppercase;font-size:.9rem}
+.about-grid,.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.timeline{display:grid;gap:20px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}
+.skill{text-align:center;transition:.3s}
+.skill:hover,.project-card:hover{transform:translateY(-8px)}
+.projects-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.contact-container input,.contact-container textarea{
+width:100%;margin-bottom:16px;padding:14px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.05);color:#fff
+}
+footer{padding:60px 24px;text-align:center;color:var(--muted)}
+.footer-links{display:flex;justify-content:center;gap:20px;margin:18px 0}
+.footer-links a{text-decoration:none;color:var(--muted)}
+@media(max-width:900px){
+#hero{grid-template-columns:1fr}
+.about-grid{grid-template-columns:1fr}
+.nav-links{display:none}
+.menu-btn{display:block}
+.hero-stats{flex-wrap:wrap}
+}
